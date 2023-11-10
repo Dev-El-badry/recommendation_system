@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 // load all environment variables
-dotenv.config()
+dotenv.config();
 
 import app from './app';
 
@@ -11,6 +11,7 @@ process.on('uncaughtException', (err) => {
 });
 
 const PORT = process.env.PORT || 5000;
+// eslint-disable-next-line
 const start = async () => {
   const server = app.listen(PORT, () => {
     console.log(`app running on port ${PORT}`);
@@ -23,6 +24,6 @@ const start = async () => {
       process.exit(1);
     });
   });
-}
+};
 
 start();
