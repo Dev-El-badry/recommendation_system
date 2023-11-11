@@ -24,6 +24,6 @@
     }
   },
 
-  "include": ["./*.js", "src/**/*.ts", "test/**/*.ts", "__test__/**/*.ts", "knexfile.ts"],
+  "include": ["./*.js", "src/**/*.ts", "test/**/*.ts", "knexfile.ts"],
   "exclude": ["node_modules", "dist"]
 }
