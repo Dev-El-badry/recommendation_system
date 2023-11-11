@@ -1,5 +1,5 @@
 import { body } from 'express-validator';
-import { User } from '@module/users/models/user.model';
+import { User } from '@module/auth/models/user.model';
 
 export const signupValidation = [
   body('first_name').not().isEmpty().isLength({ min: 2, max: 120 }).withMessage('first name not be empty'),

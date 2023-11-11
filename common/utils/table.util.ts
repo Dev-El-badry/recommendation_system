@@ -10,3 +10,23 @@ export const uuid = (table: Knex.CreateTableBuilder, knex: Knex, columnName: str
   if (columnName === 'id') definition.primary();
   return definition;
 };
+
+export const references = (
+  table: Knex.TableBuilder,
+  tableName: string,
+  notNullable: boolean = true,
+  columnName: string,
+  action: 'cascade' | 'set null' = 'cascade',
+) => {
+  const definition = table
+    .uuid(`${columnName || tableName + '_id'}`)
+    .references('id')
+    .inTable(tableName)
+    .onDelete(action);
+
+  if (notNullable) {
+    definition.notNullable();
+  }
+
+  return definition;
+};

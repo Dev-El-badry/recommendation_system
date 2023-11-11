@@ -1,7 +1,7 @@
 import express from 'express';
 import { signinValidation } from '../requests/signin.request';
 import { validateRequest } from '@common/middlewares/validate-request';
-import { getMe, getUser, sigin, signup } from '@module/users/controllers/authentication.controller';
+import { getMe, getUser, sigin, signup } from '@module/auth/controllers/authentication.controller';
 import { protect } from '@common/middlewares/protect';
 import { signupValidation } from '../requests/signup.request';
 

@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import { Request, Response, NextFunction } from 'express';
 import { NoAuthorizedError } from '../errors/no-authorized-error';
-import { User } from '../../src/modules/users/models/user.model';
+import { User } from '@module/auth/models/user.model';
 interface IPayload {
   id: string;
   email: string;

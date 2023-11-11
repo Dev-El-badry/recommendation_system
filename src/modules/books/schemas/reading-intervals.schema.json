@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "Book",
+  "description": "The reading intervals of books",
+  "required": ["user_id", "book_id", "start_page", "end_page"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "$id": "#/properties/id",
+      "type": "string",
+      "title": "The database ID of the reading intervals table."
+    },
+    "title": {
+      "$id": "#/properties/user_id",
+      "type": "string",
+      "title": "the user id related with user"
+    },
+    "book_id": {
+      "$id": "#/properties/book_id",
+      "type": "string",
+      "title": "the book id related with book"
+    },
+    "start_page": {
+      "$id": "#/properties/start_page",
+      "type": "integer",
+      "title": "the start page of book"
+    },
+    "end_page": {
+      "$id": "#/properties/end_page",
+      "type": "integer",
+      "title": "the end page of book"
+    },
+    "created_at": {
+      "$id": "#/properties/created_at",
+      "type": "string",
+      "title": "The creation date when user submit interval of reading."
+    },
+    "updated_at": {
+      "$id": "#/properties/updated_at",
+      "type": "string",
+      "title": "The updated date when user submit interval of reading."
+    }
+  }
+}

@@ -24,7 +24,7 @@ beforeEach(async () => {
   await Promise.all(
     Object.values(tables)
       .reverse()
-      .map((table) => db(table).truncate()),
+      .map((table) => db(table).del()),
   );
 });
 

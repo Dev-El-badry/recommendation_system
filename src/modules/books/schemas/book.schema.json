@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "Book",
+  "description": "The books of website",
+  "required": ["title", "num_of_pages"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "$id": "#/properties/id",
+      "type": "string",
+      "title": "The database ID of the book."
+    },
+    "title": {
+      "$id": "#/properties/title",
+      "type": "string",
+      "title": "book title"
+    },
+    "num_of_pages": {
+      "$id": "#/properties/num_of_pages",
+      "type": "integer",
+      "title": "number of pages"
+    },
+    "created_at": {
+      "$id": "#/properties/created_at",
+      "type": "string",
+      "title": "The creation date of the book."
+    },
+    "updated_at": {
+      "$id": "#/properties/updated_at",
+      "type": "string",
+      "title": "The date of book was last updated."
+    }
+  }
+}
