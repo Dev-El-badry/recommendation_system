@@ -4,6 +4,7 @@ import { User } from '@module/auth/models/user.model';
 import { BadRequestError } from '@common/errors/bad-request-error';
 import INewInterval from '@common/interfaces/interval.interface';
 import { getNumOfPages } from '../services/book.service';
+import SMSSerivce from '../services/sms.service';
 
 export const submitInterval = async (req: Request, res: Response) => {
   const { start_page, end_page, book_id } = req.body;
@@ -27,6 +28,17 @@ export const submitInterval = async (req: Request, res: Response) => {
   };
 
   const record = await submitNewInterval(data);
+
+  //send SMS
+  const smsService = new SMSSerivce();
+  smsService
+    .sendThankYouSMS(user.email, `${user.first_name} ${user.last_name}`)
+    .then(() => {
+      // console.log('SMS Sent successfully');
+    })
+    .catch((error) => {
+      console.error('Error sending SMS:', error.message);
+    });
 
   res.status(200).json({
     data: record,
