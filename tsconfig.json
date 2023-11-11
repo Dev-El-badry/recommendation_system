@@ -13,12 +13,17 @@
     "strictPropertyInitialization": false,
     "strictNullChecks": true,
     "allowJs": false,
+    "baseUrl": "./",
+    "paths": {
+      "@config/*": ["config/*"],
+      "@common/*": ["common/*"],
+      "@constants/*": ["constants/*"],
+      "@db/*": ["db/*"],
+      "@module/*": ["src/modules/*"],
+      "@src/*": ["src/*"]
+    }
   },
-  "include": [
-    "./*.js",
-    "src/**/*.ts",
-    "test/**/*.ts",
-    "knexfile.ts"
-  ],
+
+  "include": ["./*.js", "src/**/*.ts", "test/**/*.ts", "__test__/**/*.ts", "knexfile.ts"],
   "exclude": ["node_modules", "dist"]
 }

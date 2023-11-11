@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 // load all environment variables
 dotenv.config();
+import '@config/database/db-config';
 
 import app from './app';
 
