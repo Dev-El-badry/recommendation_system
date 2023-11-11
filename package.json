@@ -6,11 +6,16 @@
   "scripts": {
     "start": "ts-node src/index.ts",
     "dev": "nodemon src/index.ts",
-    "test": "jest --watchAll --no-cache",
-    "test:ci": "jest",
+    "test": "jest --watchAll --no-cache --runInBand",
+    "test:ci": "jest --runInBand",
     "lint": "eslint . --ext .ts",
     "prepare": "husky install",
-    "prettier": "npx prettier --config .prettierrc.json --write src/**/*.ts"
+    "prettier": "npx prettier --config .prettierrc.json --write src/**/*.ts",
+    "migrate": "npx knex migrate:latest",
+    "migrate:fresh": "npx knex migrate:list",
+    "rollback": "npx knex migrate:rollback",
+    "rollback:all": "npx knex migrate:rollback --all",
+    "seed": "npx knex seed:run"
   },
   "keywords": [],
   "author": "Eslam Elbadry <dev.elbadry@gmail.com>",
