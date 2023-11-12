@@ -29,4 +29,4 @@ jobs:
     steps:
       - name: Check out code into the Nodejs module directory
         uses: actions/checkout@v2
-      - run: bash start.sh
+      - run: bash start-ci.sh
