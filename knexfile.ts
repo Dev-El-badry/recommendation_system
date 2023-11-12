@@ -6,7 +6,7 @@ export default <{ [key: string]: any }>{
   development: {
     client: 'pg',
     connection: {
-      host: process.env.POSTGRES_HOST,
+      host: 'db',
       database: process.env.POSTGRES_DB,
       user: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
@@ -23,7 +23,7 @@ export default <{ [key: string]: any }>{
   test: {
     client: 'pg',
     connection: {
-      host: process.env.POSTGRES_TEST_HOST,
+      host: 'test_db',
       database: process.env.POSTGRES_TEST_DB,
       user: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,

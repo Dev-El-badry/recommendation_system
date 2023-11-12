@@ -16,7 +16,7 @@ jobs:
         image: postgres:14-alpine
         env:
           POSTGRES_USER: root
-          POSTGRES_PASSWORD: secret
+          POSTGRES_PASSWORD: root
           POSTGRES_DB: test_recommendation_db
         ports:
           - 54320:5432
@@ -29,4 +29,4 @@ jobs:
     steps:
       - name: Check out code into the Nodejs module directory
         uses: actions/checkout@v2
-      - run: npm install && npm install --save-dev & npm run test:ci
+      - run: bash start-ci.sh

@@ -35,6 +35,9 @@ services:
       context: .
     ports:
       - 5000:5000
+    depends_on:
+      - db
+      - test_db
 
 volumes:
   db-data:
